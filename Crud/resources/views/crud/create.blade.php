@@ -10,15 +10,51 @@
 <body>
     <div class="container">
         <h1>welcome to create Crud page</h1>
+        {{-- <form action="{{ url('curd') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="{{ old('name') }}">
+                @error('name')
+                    <div>{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" value="{{ old('email') }}">
+                @error('email')
+                    <div>{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                @error('password')
+                    <div>{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div>
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form> --}}
         <form action="{{ url('curd') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" name="title" id="title">
+
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" name="description" id="description">
+
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" value="1" name="is_completed" id="is_completed">

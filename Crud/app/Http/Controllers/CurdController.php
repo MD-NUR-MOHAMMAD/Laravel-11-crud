@@ -30,6 +30,10 @@ class CurdController extends Controller
     {
         // dd ($request->all());
         // echo ("store is called");
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+        ]);
 
         $todo = new Curd();
         $todo->title = $request->title;
