@@ -1,15 +1,14 @@
 <?php
 
-use App\Http\Controllers\CurdController;
+use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/curd', [CurdController::class, 'index'])->name('crud.index');
-Route::get('/curd/add', [CurdController::class, 'create'])->name('curd.create');
-Route::post('/curd', [CurdController::class, 'store'])->name('curd.store');
+
+Route::get('/crud', [CrudController::class, 'index'])->name('crud.index');
 
 
 
