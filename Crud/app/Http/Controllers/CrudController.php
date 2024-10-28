@@ -20,7 +20,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        //
+        return view ('crud.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class CrudController extends Controller
      */
     public function edit(Crud $crud)
     {
-        //
+        return view ('crud.edit');
     }
 
     /**
