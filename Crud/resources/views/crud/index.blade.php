@@ -16,38 +16,20 @@
                     <th>Phone</th>
                     <th>Action</th>
                 </tr>
+                @forelse ($cruds as $crud)
                 <tr>
-                    <td>01</td>
-                    <td>Nurmohammad</td>
-                    <td>nur@gmail.com</td>
-                    <td>01677772333</td>
+                    <td>{{$crud->id}}</td>
+                    <td>{{$crud->name}}</td>
+                    <td>{{$crud->email}}</td>
+                    <td>{{$crud->phone}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{url('crud/edit')}}?id=1">Edit</a>
                         <a class="btn btn-danger" href="deletestudent.php?id=1"
                             onclick="return confirm('Are you sure to Delete?')">Delete</a>
                     </td>
-                </tr>
-                <tr>
-                    <td>02</td>
-                    <td>Asif</td>
-                    <td>asif@gmail.com</td>
-                    <td>01677772233</td>
-                    <td>
-                        <a class="btn btn-primary" href="{{url('crud/edit')}}?id=1">Edit</a>
-                        <a class="btn btn-danger" href="deletestudent.php?id=1"
-                            onclick="return confirm('Are you sure to Delete?')">Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>03</td>
-                    <td>Rana</td>
-                    <td>rana@gmail.com</td>
-                    <td>01677772331</td>
-                    <td>
-                        <a class="btn btn-primary" href="{{url('crud/edit')}}?id=1">Edit</a>
-                        <a class="btn btn-danger" href="lib/process_student.php? action=delete&id=1"
-                            onclick="return confirm('Are you sure to Delete?')">Delete</a>
-                    </td>
+                    @empty
+                    <h3>no list found</h3>
+                @endforelse
                 </tr>
             </table>
         </div>
