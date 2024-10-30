@@ -12,8 +12,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        return view ('crud.index', ['cruds'=>Crud::all()]);
-
+        return view('crud.index', ['cruds' => Crud::all()]);
     }
 
     /**
@@ -21,7 +20,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        return view ('crud.create');
+        return view('crud.create');
     }
 
     /**
@@ -29,7 +28,16 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // echo "store called";
+        // dd ($request->all());
+        // all form data is show without fillable in a model. this is very simple beacuse create a form show korbo request a value store kore new model a save korbo.
+
+        $crud = new Crud();
+        $crud->name = $request->name;
+        $crud->email = $request->email;
+        $crud->phone = $request->phone;
+        $crud->save();
+        return redirect()->route('crud.index')->with('success', 'Todo created successfully.');
     }
 
     /**
@@ -45,7 +53,7 @@ class CrudController extends Controller
      */
     public function edit(Crud $crud)
     {
-        return view ('crud.edit');
+        return view('crud.edit');
     }
 
     /**

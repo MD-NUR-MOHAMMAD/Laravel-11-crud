@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/crud', [CrudController::class, 'index'])->name('crud.index');
+Route::post('/crud/add', [CrudController::class, 'store'])->name('crud.store');
 Route::get('/crud/add', [CrudController::class, 'create'])->name('crud.create');
 Route::get('/crud/edit', [CrudController::class, 'edit'])->name('crud.edit');
 
