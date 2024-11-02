@@ -30,7 +30,7 @@ class CrudController extends Controller
     {
         // echo "store called";
         // dd ($request->all());
-        // all form data is show without fillable in a model. this is very simple beacuse create a form show korbo request a value store kore new model a save korbo.
+        // all form data is show without fillable in a model. this is very simple beacuse create a form show korbo, request a value store kore new model a save korbo.
 
         $crud = new Crud();
         $crud->name = $request->name;
