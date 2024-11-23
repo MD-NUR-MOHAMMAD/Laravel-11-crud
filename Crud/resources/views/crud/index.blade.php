@@ -24,11 +24,11 @@
                     <td>{{$crud->phone}}</td>
                     <td class="text-center">
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="{{ route('categories.edit', $category->id) }}"
+                            <a href="{{ route('crud.edit', $crud->id) }}"
                                 class="btn btn-sm btn-outline-secondary">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
+                            <form action="{{ route('crud.destroy', $crud->id) }}" method="POST"
                                 class="d-inline">
                                 @csrf
                                 @method('DELETE')
@@ -37,7 +37,7 @@
                                     <i class="bi bi-trash"></i>
                                 </button>
                             </form>
-                            <a href="{{ route('categories.show', $category->id) }}"
+                            <a href="{{ route('crud.show', $crud->id) }}"
                                 class="btn btn-sm btn-outline-primary">
                                 <i class="bi bi-eye-fill"></i>
                             </a>

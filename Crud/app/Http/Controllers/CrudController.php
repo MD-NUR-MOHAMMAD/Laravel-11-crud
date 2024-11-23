@@ -69,6 +69,6 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        //
+        echo "hello destroy";
     }
 }
