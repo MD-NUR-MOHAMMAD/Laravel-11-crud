@@ -22,10 +22,26 @@
                     <td>{{$crud->name}}</td>
                     <td>{{$crud->email}}</td>
                     <td>{{$crud->phone}}</td>
-                    <td>
-                        <a class="btn btn-primary" href="{{url('crud/edit')}}?id=1">Edit</a>
-                        <a class="btn btn-danger" href="deletestudent.php?id=1"
-                            onclick="return confirm('Are you sure to Delete?')">Delete</a>
+                    <td class="text-center">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="{{ route('categories.edit', $category->id) }}"
+                                class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
+                                class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                    onclick="return confirm('Are you sure you want to delete this data?')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                            <a href="{{ route('categories.show', $category->id) }}"
+                                class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-eye-fill"></i>
+                            </a>
+                        </div>
                     </td>
                     @empty
                     <h3>no list found</h3>
