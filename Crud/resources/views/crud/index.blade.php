@@ -5,7 +5,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h2>Student data <a class="float-end" href="{{url('crud/add')}}">Add Student Data</a></h2>
+            <h2>Student data <a class="float-end" href="{{route('crud.create')}}">Add Student Data</a></h2>
         </div>
         <div class="card-body">
             <table class="table table-striped">

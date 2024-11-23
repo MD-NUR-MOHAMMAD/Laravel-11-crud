@@ -69,6 +69,8 @@ class CrudController extends Controller
      */
     public function destroy(Crud $crud)
     {
-        echo "hello destroy";
+
+        Crud::destroy($crud->id);
+        return redirect()->route('crud.index')->with('success', 'SubCategory deleted successfully.');
     }
 }
